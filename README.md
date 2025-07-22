@@ -30,7 +30,7 @@ These executables work on _PowerShell 5.1_ and up, however, some features may be
 
 However, these tools; excluding all except `stta.exe` and `ostta.exe`, where the others use prebuilt tickets, use a patched version which will create a ticket file, even if the system is not activated or has invalid activation data. The process can be explained through this chart:
 <img width="942" height="621" alt="Diagram of how GenuineTicket.xml is used" src="https://github.com/user-attachments/assets/957b8349-d5f0-4208-b2f1-5a9f65c52245" />
-
+_(Other services may be included, you can help by contributing to the chart.)_
 # Gray-area notice
 This tool can potentially be misused for software piracy and circumvention. For more information, see the license file.
 
