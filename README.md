@@ -22,20 +22,18 @@ You can see the [license](../main/LICENSE.md) file for more information on safet
 ## OSTTA.exe
 `ostta.exe` is very similar to `stta.exe`, but supports offline environments by manually crafting a `gatherosstate.exe` file using the bytes from an existing and patched `gatherosstate.exe` and generating a ticket as so. Downsides of this method can be caused by the large variable _$raw_, which represents the bytes that will be converted to actual data (as _$bytes_) to then write to the file.
 
-These executables work on _PowerShell 5.1_ and up, however, some features may be deprecated for new versions of **PowerShell**, and, if so, it is advised to contribute and change to support such versions.
+These executables work on _PowerShell 5.1_ and higher; however, some features may be deprecated for new versions of **PowerShell**, and, if so, it is advised to contribute and change to support such versions.
 
 # How does this affect Windows activation?
-`GenuineTicket.xml` affects Windows activation by introducing a hardware's activation from the ticket. Originally, `gatherosstate.exe` will only create _GenuineTicket.xml_ if the PC followed the condition(s) below:
+`GenuineTicket.xml` affects Windows activation by introducing hardware activation from the ticket. Originally, `gatherosstate.exe` will only create _GenuineTicket.xml_ if the PC followed the condition(s) below:
 - The installation of Windows 7, 8.xx, and previous versions to Windows 10 must be activated. This is the key condition.
 
-However, these tools; excluding all except `stta.exe` and `ostta.exe`, where the others use prebuilt tickets, use a patched version which will create a ticket file, even if the system is not activated or has invalid activation data. The process can be explained through this chart:
+However, these tools, excluding all except `stta.exe` and `ostta.exe`, where the others use prebuilt tickets, use a patched version that will create a ticket file, even if the system is not activated or has invalid activation data. The process can be explained through this chart:
 <img width="942" height="621" alt="Diagram of how GenuineTicket.xml is used" src="https://github.com/user-attachments/assets/957b8349-d5f0-4208-b2f1-5a9f65c52245" />
 _(Other services may be included, you can help by contributing to the chart.)_
 # Gray-area notice
-This tool can potentially be misused for software piracy and circumvention. For more information, see the license file.
-
+This tool can potentially be misused for software piracy and circumvention. It is intended for this tool to be used in forensic, educational, and experimental purposes.
 # Steps to install in Git Bash
 Refer to the git-setup-guide file.
-
 # Safety and malware notice
-This file has been deemed safe. To read the executable, refer to the description for steps to extract it. For more information, see the license file @ distributions rights.
+This file has been deemed safe. To read the executable, refer to the description for steps to extract it.
