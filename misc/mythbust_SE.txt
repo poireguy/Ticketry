@@ -1,0 +1,2 @@
+This tool (or use of a backup GenuineTicket.xml file) can allow you to escape Windows 11 SE (Student Edition, disputed, but internally known as "CloudEdition") as it changes the hardware activation.
+After changing the product key to the generic key the ticket would list, it would activate the edition and get off of SE without reinstalling.
