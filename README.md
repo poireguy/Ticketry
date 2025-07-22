@@ -11,7 +11,7 @@ cd "$parent-directory-of-file"
 .\$name-of-downloaded -extract:$name-of-extracted
 ```
 It will return as a _.ps1_ PowerShell file.
-You can see the [license](../LICENSE.md) file for more information on safety of the file, distributing rights, and copyright under the public domain.
+You can see the [license](../main/LICENSE.md) file for more information on safety of the file, distributing rights, and copyright under the public domain.
 # The technology behind these utilities
 ## STTA.exe
 `stta.exe` maps editions of Windows 10 and 11 in a predefined variable known as _$editions_, where it then prompts for edition while displaying a list of all editions available (currently 32 available editions, others will contain 31, but you can help by contributing). After selecting, it will display the product family name of the edition and the generic RTM _(Release-to-Manufacturer)_ product key. After this, it will fetch the _Windows 10 1607 ADK_ cabinet installer (although it may prompt to create C:\Files, you should allow it and you can remove the directory after execution) extract the file encrypted, then `gatherosstate.exe`, renames it to `gatherosstate.exe`, executes it with the provided Pfn variable and an existing Confirmation ID (at $PKeyIID). It also prompts to move it to `C:\ProgramData\Microsoft\Windows\ClipSVC\GenuineTicket`. Administrator access is required to access this directory. It will create a file known as **GenuineTicket.xml**, previously but now obsolete known as a free upgrade path from versions below Windows 10 and reserving hardware activation status. It can then prompt to enter the product key of the edition you selected and attempts activation.
