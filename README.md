@@ -43,3 +43,6 @@ This tool can potentially be misused for software piracy and circumvention. It i
 Refer to the git-setup-guide file.
 # Safety and malware notice
 This file has been deemed safe. To read the executable, refer to the description for steps to extract it.
+
+# Credits
+Thank you, Massgrave (or Massgravel) and asdcorp for inspiration and the use of your tools. It is the reason this tool works.
