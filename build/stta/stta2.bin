@@ -1,0 +1,154 @@
+-QWJK7-DRR8H"
+    }
+
+    "EnterpriseS2019" = @{
+        Pfn = "Microsoft.Windows.125.X21-83233_8wekyb3d8bbwe"
+        Key = "43TBQ-NH92J-XKTM7-KT3KK-P39PB"
+    }
+
+    "EnterpriseS2016" = @{
+        Pfn = "Microsoft.Windows.125.X21-05035_8wekyb3d8bbwe"
+        Key = "NK96Y-D9CD8-W44CQ-R8YTK-DYJWX"
+    }
+
+    "EnterpriseS2015" = @{
+        Pfn = "Microsoft.Windows.125.X19-99617_8wekyb3d8bbwe"
+        Key = "FWN7H-PF93Q-4GGP8-M8RF3-MDWWW"
+    }
+
+    "EnterpriseSN2019" = @{
+        Pfn = "Microsoft.Windows.126.X21-83264_8wekyb3d8bbwe"
+        Key = "M33WV-NHY3C-R7FPM-BQGPT-239PG"
+    }
+
+    "EnterpriseSN2016" = @{
+        Pfn = "Microsoft.Windows.126.X21-04921_8wekyb3d8bbwe"
+        Key = "2DBW3-N2PJG-MVHW3-G7TDK-9HKR4"
+    }
+
+    "EnterpriseSN2015" = @{
+        Pfn = "Microsoft.Windows.126.X19-98770_8wekyb3d8bbwe"
+        Key = "NTX6B-BRYC2-K6786-F6MVQ-M7V2X"
+    }
+
+    "ProfessionalWorkstation" = @{
+        Pfn = "Microsoft.Windows.161.X21-43626_8wekyb3d8bbwe"
+        Key = "DXG7C-N36C4-C4HTG-X4T3X-2YV77"
+    }
+
+    "ProfessionalWorkstationN" = @{
+        Pfn = "Microsoft.Windows.162.X21-43644_8wekyb3d8bbwe"
+        Key = "WYPNQ-8C467-V2W6J-TX4WX-WT2RQ"
+    }
+
+    "ProfessionalEducation" = @{
+        Pfn = "Microsoft.Windows.164.X21-04955_8wekyb3d8bbwe"
+        Key = "8PTT6-RNW4C-6V7J2-C2D3X-MHBPB"
+    }
+
+    "ProfessionalEducationN" = @{
+        Pfn = "Microsoft.Windows.165.X21-04956_8wekyb3d8bbwe"
+        Key = "GJTYN-HDMQY-FRR76-HVGC7-QPF8P"
+    }
+
+    "EnterpriseG" = @{
+        Pfn = "Microsoft.Windows.171.X21-24727_8wekyb3d8bbwe"
+        Key = "FV469-WGNG4-YQP66-2B2HY-KD8YX"
+    }
+
+    "EnterpriseGN" = @{
+        Pfn = "Microsoft.Windows.172.X21-24709_8wekyb3d8bbwe"
+        Key = "FW7NV-4T673-HF4VX-9X4MM-B4H4T"
+    }
+
+    "Cloud" = @{
+        Pfn = "Microsoft.Windows.178.X21-32983_8wekyb3d8bbwe"
+        Key = "V3WVW-N2PV2-CGWC3-34QGF-VMJ2C"
+    }
+
+    "CloudN" = @{
+        Pfn = "Microsoft.Windows.179.X21-32987_8wekyb3d8bbwe"
+        Key = "NH9J3-68WK7-6FB93-4K3DF-DJ4F6"
+    }
+
+    "CloudE" = @{
+        Pfn = "Microsoft.Windows.183.X21-76403_8wekyb3d8bbwe"
+        Key = "2HN6V-HGTM8-6C97C-RK67V-JQPFD"
+    }
+
+    "IoTEnterprise" = @{
+        Pfn = "Microsoft.Windows.188.X21-99378_8wekyb3d8bbwe"
+        Key = "XQQYW-NFFMW-XJPBH-K8732-CKFFD"
+    }
+
+    "IoTEnterpriseS2021" = @{
+        Pfn = "Microsoft.Windows.191.X21-99682_8wekyb3d8bbwe"
+        Key = "QPM6N-7J2WJ-P88HH-P3YRH-YY74H"
+    }
+
+    "CloudEditionN" = @{
+        Pfn = "Microsoft.Windows.202.X22-53884_8wekyb3d8bbwe"
+        Key = "K9VKN-3BGWV-Y624W-MCRMQ-BHDCD"
+    }
+
+    "CloudEdition" = @{
+        Pfn = "Microsoft.Windows.203.X22-53847_8wekyb3d8bbwe"
+        Key = "KY7PN-VR6RX-83W6Y-6DDYQ-T6R4W"
+    }
+
+    "IoTEnterpriseSK" = @{
+        Pfn = "Microsoft.Windows.205.X23-15027_8wekyb3d8bbwe"
+        Key = "J7NJW-V6KBM-CC8RW-Y29Y4-HQ2MJ"
+    }
+    
+    "IoTEnterpriseS2024" = @{
+        Pfn = "Microsoft.Windows.191.X23-12617_8wekyb3d8bbwe"
+        Key = "CGK42-GYN6Y-VD22B-BX98W-J8JXD"
+    }
+}
+
+$aliases = @{
+    "edu"  = "Education"
+    "edun" = "EducationN"
+    "pro"  = "Professional"
+    "pron" = "ProfessionalN"
+    "wrk"  = "ProfessionalWorkstation"
+    "wrkn" = "ProfessionalWorkstationN"
+    "ent"  = "Enterprise"
+    "entn" = "EnterpriseN"
+    "iot"  = "IoTEnterprise"
+    "iot21" = "IoTEnterpriseS2021"
+    "iot24" = "IoTEnterpriseS2024"
+    "home" = "Core"
+}
+
+
+# === Step 0: Show Available Editions and Aliases ===
+if ($edition) {
+    # Handle alias support and normalize input
+    $editionInput = $edition.ToLower()
+    if ($aliases.ContainsKey($editionInput)) {
+        $selectedEdition = $aliases[$editionInput]
+    } elseif ($editions.ContainsKey($edition)) {
+        $selectedEdition = $edition
+    } else {
+        Write-Host "Invalid edition input via -edition. Available options:"
+        $editions.Keys | Sort-Object
+        exit
+    }
+} else {
+    # Fallback to interactive mode if -edition wasn't supplied
+    Write-Host "`nAvailable editions:" -ForegroundColor Cyan
+    $editionList = $editions.Keys | Sort-Object
+    $i = 1
+    $editionList | ForEach-Object { Write-Host "$i. $_"; $i++ }
+
+    $userInput = Read-Host "`nYou can enter a number, full edition name, alias, or current"  
+    if ($userInput -match '^\d+$') {
+    $selectedEdition = $editionList[$userInput - 1]
+} elseif ($aliases.ContainsKey($userInput.ToLower())) {
+    $selectedEdition = $aliases[$userInput.ToLower()]
+} elseif ($editionList -contains $userInput) {
+    $selectedEdition = $userInput
+} elseif ($userInput.ToLower() -eq 'current') {
+    $regPath = 'HKLM:\S
