@@ -22,7 +22,7 @@ cd build
 
 cd \[executable-to-build]
 
-../~build.exe
+../~build.exe -BinDir .
 
 ```
 
