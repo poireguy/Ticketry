@@ -46,3 +46,5 @@ This file has been deemed safe. To read the executable, refer to the description
 
 # Credits
 Thank you, Massgrave (or Massgravel) and asdcorp for inspiration and the use of your tools. This tool incorporates a few elements carried over, such as a patch of GatherOsState.exe. 
+# Networking notice
+Each method requires the device to have at least connected to a network using Ethernet, Wi-Fi, Internet, et cetera. After achieving a valid network connection for the first time, Windows will attempt to activate and register your device. This results in creating a digital license, which will remain on your hardware unless the hardware undergoes a significant change; however, it can be stored to a Microsoft account if the device was set up with one. So, each of these tools in the repository require your hardware to be registered with Microsoft's licensing and activation servers.
