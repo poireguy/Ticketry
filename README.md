@@ -1,5 +1,5 @@
-# ticket-util or Ticket Utility - description
-A Windows 10/11 forensic tool related to Windows activation. It is intended for forensic and experimental use. There are several variations in which you can help contribute to add new features and test in a lab environment:
+# Ticketry - Description
+Ticketry is a Windows 10/11 forensic tool related to Windows activation. Formerly known as _ticket-util_ or _Ticket Utility_, it is intended for forensic and experimental use. There are several variations in which you can help contribute to add new features and test in a lab environment:
 1. `stta.exe` - First edition that was developed. It requires online access to install the Windows 10 1607 ADK cabinet installer. After this, it is offline, and no external steps are needed that require an online network connection. Extends the potential for forensic and lab learning.
 2. `stta2.exe` - Second edition that was developed. It requires online access to refer to [asdcorp\WindowsRentFree tickets](https://github.com/asdcorp/WindowsRentFree/Tickets) and pull them based on the system Pfn (_product family name_) under the registry key **HKLM\SYSTEM\CurrentControlSet\Control\ProductOptions** at subkey **OSProductPfn**. Useful for speed.
 3. `stta3.exe` - Third edition that was developed. It requires online access to fetch tickets from the same repository as `stta2.exe`, but only activates the current edition of Windows. Useful for speed.
@@ -26,23 +26,27 @@ These executables work on _PowerShell 5.1_ and higher; however, some features ma
 
 # How does this affect Windows activation?
 `GenuineTicket.xml` affects Windows activation by introducing hardware activation from the ticket. Originally, `gatherosstate.exe` will only create _GenuineTicket.xml_ if the PC followed the condition(s) below:
-- The installation of Windows 7, 8.xx, and previous versions to Windows 10 must be activated. This is the key condition.
+- The installation of Windows 7, the 8.xx family, and previous versions to Windows 10 must be activated. This was the key condition.
 
 However, these tools, excluding all except `stta.exe` and `ostta.exe`, where the others use prebuilt tickets, use a patched version that will create a ticket file, even if the system is not activated or has invalid activation data. The process can be explained through this chart:
 <img width="942" height="621" alt="Diagram of how GenuineTicket.xml is used" src="https://github.com/user-attachments/assets/957b8349-d5f0-4208-b2f1-5a9f65c52245" />
-_(Other services may be included, you can help by contributing to the chart.)_
+_(Other services may be included, such as SPPSVC, you can help by contributing to the chart.)_
 
 Each executable utilizes the command:
 ```Batch
 ClipUp.exe -v -o
 ```
-To push the ticket, which essentially makes the system notice the ticket at a faster rate.
+To push the ticket, which makes the system notice the ticket at a faster rate.
 # Gray-area notice
-This tool can potentially be misused for software piracy and circumvention. It is intended for this tool to be used in forensic, educational, and experimental purposes.
+This tool can potentially be misused for software piracy and circumvention. It is intended for this tool to be used in forensic, educational, and experimental purposes when learning about Microsoft's activation logic.
 # Steps to install in Git Bash
 Refer to the git-setup-guide file.
 # Safety and malware notice
-This file has been deemed safe. To read the executable, refer to the description for steps to extract it.
+This file has been deemed safe. To read the executable, refer to the description for steps to extract it. If you find the software in the repository hosted elsewhere, you can compare the **SHA256** hashes between the two and attempt to extract both with PS2EXE (The software here is extractable. If the externally hosted software is not, do not execute it).
 
 # Credits
-Thank you, Massgrave (or Massgravel) and asdcorp for inspiration and the use of your tools. It is the reason this tool works.
+Thank you, Massgrave (or Massgravel) and asdcorp for inspiration and the use of your tools. This tool incorporates a few elements carried over, such as a patch of GatherOsState.exe. 
+# Networking notice
+Each method requires the device to have at least connected to a network using Ethernet, Wi-Fi, Internet, et cetera. After achieving a valid network connection for the first time, Windows will attempt to activate and register your device. This results in creating a digital license, which will remain on your hardware unless the hardware undergoes a significant change; however, it can be stored on a Microsoft account if the device was set up with one. So, each of these tools in the repository requires your hardware to be registered with Microsoft's licensing and activation servers.
+# Compatibility
+Setting the compatibility mode of the patched `gatherosstate.exe` file can vary. This was tested on Windows 10 and 11. If you receive the console error where it could not set the compatibility flag registry key, you can safely ignore it.
